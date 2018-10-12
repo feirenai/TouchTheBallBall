@@ -216,6 +216,7 @@ cc.Class({
     },
 
     init(){
+        
          //开启监听 返回小程序启动参数（只有第一次激活生效）
          let launchOption = wx.getLaunchOptionsSync();
          console.log('首次开启 launchOption');
