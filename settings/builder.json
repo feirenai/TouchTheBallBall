@@ -1,0 +1,40 @@
+{
+  "appKey": "",
+  "appSecret": "",
+  "encryptJs": true,
+  "excludeScenes": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.TouchTheBallBall",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "startScene": "487539f8-8479-4f76-b51f-10d3c891ee33",
+  "title": "TouchTheBallBall",
+  "webOrientation": "portrait",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx2cfa0df1295ab830",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": "touchBallOpenData"
+  },
+  "xxteaKey": "e6e303ad-b57f-49",
+  "zipCompressJs": true
+}
