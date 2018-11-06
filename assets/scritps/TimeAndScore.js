@@ -77,13 +77,17 @@ cc.Class({
             
             //刷新积分文本
             this.scoreTxt.string = this.currScore + "";
+            gameData.myScore = this.currScore;
         }
     },
 
     //重置积分和时间
     onRestScoreAndTime:function(){
         //重置积分文本
-        this.scoreTxt.string = "0";
+        this.currScore = 0
+        this.scoreTxt.string = this.currScore + "";
+        gameData.myScore = this.currScore;
+        
         //重置倒计时文本
         this.timeTxt.string = this.onFormatTime(1,gameData.downTime);
         //重置倒计时时间

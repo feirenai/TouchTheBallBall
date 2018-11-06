@@ -41,7 +41,7 @@ cc.Class({
 
     //新版本的判断(保证用户使用微信最新的版本) 
     updateManager(){
-        let self = this;
+        var self = this;
         if(typeof wx.getUpdateManager === 'function'){
             const updateManager = wx.getUpdateManager();
             updateManager.onCheckForUpdate(function(res){
@@ -106,7 +106,7 @@ cc.Class({
     },
 
     login(){
-        let self = this;
+        var self = this;
         //判断用户登录状态是否有效
         wx.checkSession({
             success: function(){
@@ -126,10 +126,10 @@ cc.Class({
 
     //获取微信用户信息的权限
     wxGetUserRights:function(){
-        let _self = this;
-        let winSize = cc.winSize()//cc.director.getWinSize();
+        var _self = this;
+        var winSize = cc.director.getWinSize();
         if(typeof wx.createUserInfoButton === 'function'){
-            let button = wx.createUserInfoButton({
+            var button = wx.createUserInfoButton({
                 type: 'text',
                 text: '',
                 style: {
@@ -148,7 +148,6 @@ cc.Class({
 
             //点击授权按钮
             button.onTap(function(res){
-                console.log(res);
                 
                 //ios 和 android 对于拒绝授权的回调 errMsg 没有统一处理
                 if(res.errMsg.indexOf('auth deny') > -1 || res.errMsg.indexOf('auth denied') > -1){
@@ -182,7 +181,7 @@ cc.Class({
 
     //获取用户授权设置
     getWxSetting(){
-        let self = this;
+        var self = this;
         wx.getSetting({
             success: function(res){
                 var authSetting = res.authSettin;
@@ -232,11 +231,11 @@ cc.Class({
 
     //加载微信头像资源
     onLoadIcon:function(res){
-        let _self = this;
+        var _self = this;
         cc.loader.load({url: res.avatarUrl, type: 'png'}, function (err,texture) {
             if(err)
             {
-                console.log(err);
+                
             }else{
                // _self.icon.spriteFrame = new cc.SpriteFrame(texture);
                _self.iconSprite.active = true;
@@ -247,7 +246,7 @@ cc.Class({
 
     //初始化接口
     init(){
-        let self = this;
+        var self = this;
         //初始化右上角的分享
         wx.showShareMenu({
             withShareTicket: true,

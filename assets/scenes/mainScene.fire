@@ -614,15 +614,13 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "世界排行",
-    "_N$string": "世界排行",
+    "_string": "群排行",
+    "_N$string": "群排行",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
-    "_N$file": {
-      "__uuid__": "ce8bf6e6-6e5a-4860-9a0f-93b302d9b579"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -870,10 +868,8 @@
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
-    "_N$file": {
-      "__uuid__": "ce8bf6e6-6e5a-4860-9a0f-93b302d9b579"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -1134,10 +1130,8 @@
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": false,
-    "_N$file": {
-      "__uuid__": "ce8bf6e6-6e5a-4860-9a0f-93b302d9b579"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -1398,10 +1392,8 @@
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
-    "_N$file": {
-      "__uuid__": "ce8bf6e6-6e5a-4860-9a0f-93b302d9b579"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -1662,10 +1654,8 @@
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
-    "_N$file": {
-      "__uuid__": "ce8bf6e6-6e5a-4860-9a0f-93b302d9b579"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -2187,10 +2177,8 @@
     "_fontSize": 50,
     "_lineHeight": 50,
     "_enableWrapText": true,
-    "_N$file": {
-      "__uuid__": "ce8bf6e6-6e5a-4860-9a0f-93b302d9b579"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -2387,8 +2375,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 64,
-      "height": 35
+      "width": 74,
+      "height": 74
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2397,8 +2385,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 242,
-      "y": 273,
+      "x": 230,
+      "y": 333,
       "z": 0
     },
     "_scale": {
@@ -2595,16 +2583,6 @@
     "_id": "3dPA90K8hOWJc4lDStD8Bg"
   },
   {
-    "__type__": "cc.WXSubContextView",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 55
-    },
-    "_enabled": true,
-    "_id": "61XvqWIUtDp5m62aSqbeEY"
-  },
-  {
     "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
@@ -2613,7 +2591,9 @@
     },
     "_enabled": true,
     "alignMode": 1,
-    "_target": null,
+    "_target": {
+      "__id__": 55
+    },
     "_alignFlags": 18,
     "_left": 0,
     "_right": 0,
@@ -2632,6 +2612,16 @@
     "_id": "38jGRlC6hLAKyAhNDaYjdq"
   },
   {
+    "__type__": "cc.WXSubContextView",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 55
+    },
+    "_enabled": true,
+    "_id": "b5sZD2U3ZOtahrqbAnP0nD"
+  },
+  {
     "__type__": "051850Vk0FLl7kNhMojbNc/",
     "_name": "",
     "_objFlags": 0,
@@ -2639,6 +2629,9 @@
       "__id__": 48
     },
     "_enabled": true,
+    "nodeScript": {
+      "__id__": 55
+    },
     "_id": "f2Vg3aqdpExLRiGAs6kA/D"
   },
   {

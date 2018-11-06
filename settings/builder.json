@@ -29,7 +29,7 @@
   "title": "TouchTheBallBall",
   "webOrientation": "portrait",
   "wechatgame": {
-    "REMOTE_SERVER_ROOT": "",
+    "REMOTE_SERVER_ROOT": "http://www.feirenai.cn:80/touchBall/",
     "appid": "wx2cfa0df1295ab830",
     "isSubdomain": false,
     "orientation": "portrait",

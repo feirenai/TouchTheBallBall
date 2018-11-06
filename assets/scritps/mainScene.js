@@ -8,6 +8,7 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 var gameData = require("./config/gameData");
+var openDomain = require("openDomain");
 
 cc.Class({
     extends: cc.Component,
@@ -111,7 +112,7 @@ cc.Class({
             return;
         }
 
-        let _self = this;
+        var _self = this;
         //开始记载头像资源
         cc.loader.load({url: gameData.iconUrl, type: 'png'}, function (err,texture) {
             if(err)
@@ -126,16 +127,16 @@ cc.Class({
                _self.myNameTxt.string = gameData.myName;
             }
         });*/
-        let _self = this;
-        let user = wx.getStorageSync('userInfo');
+        var _self = this;
+        var user = wx.getStorageSync('userInfo');
 
         //设置自己的名字
         _self.myNameTxt.string = user.nickName;
 
         //显示头像
-        let image = wx.createImage();
+        var image = wx.createImage();
         image.onload = function(){
-            let texture = new cc.Texture2D();
+            var texture = new cc.Texture2D();
             texture.initWithElement(image);
             texture.handleLoadedTexture();
             _self.icon.spriteFrame.setTexture(texture);
@@ -158,6 +159,7 @@ cc.Class({
 
     //点击开始按钮
     onStartClick:function(){
+        gameData.comeOver = false;
         cc.director.loadScene("gameScene");
     },
 
@@ -201,44 +203,50 @@ cc.Class({
 
     //点击广告按钮
     onClickAdvertisingBtn:function(){
-
+        if(!this.mmm)
+        {
+            this.mmm = 1;
+        }else
+        {
+            this.mmm += 1;
+        }
+        this.opanPanel.postMessage("score",this.mmm);
     },
 
     //点击好友排行按钮
     onClickFriendBtn:function(){
         this.rankSrpit.active = true;
+        this.opanPanel.openFriendRank();
     },
 
     //点击排行榜关闭按钮
     onClickRankBackBtn:function(){
         this.rankSrpit.active = false;
-        postMessage
+        this.opanPanel.hideRank();
     },
 
     init(){
         
          //开启监听 返回小程序启动参数（只有第一次激活生效）
-         let launchOption = wx.getLaunchOptionsSync();
-         console.log('首次开启 launchOption');
-         console.log(launchOption);
+         var launchOption = wx.getLaunchOptionsSync();
 
          //开启监听小游戏回到前台的事件(分享返回，下拉框的返回)
          wx.onShow(function(dt){
-            console.log("回到前台onshow");
-            console.log(dt);
+            //console.log("回到前台onshow");
+           // console.log(dt);
             if(launchOption.scene == 1044){
                 //判断是否从群分享链接进入 打开群分享排行
-                console.log("主域发送1",aunchOption.shareTicket);
+                //console.log("主域发送1",aunchOption.shareTicket);
                 self.opanPanel.openCrowdRank(launchOption.shareTicket);
             }else if(dt.scene == 1044)
             {
-                console.log("主域发送1",dt);
+                //console.log("主域发送1",dt);
                 self.opanPanel.openCrowdRank(dt,shareTicket);
             }else if(launchOption.scene == 1007){
                 //从分享页面进入
-                console.log('分享好友开启' + launchOption.qurey.openid);
+                //console.log('分享好友开启' + launchOption.qurey.openid);
             }else if(dt.scene == 1077){
-                console.log('分享好友开启' + dt.qurey.openid);
+                //console.log('分享好友开启' + dt.qurey.openid);
             }
          });
     }

@@ -18,7 +18,7 @@ var  gameData = {
     //当前所加的分数的数组
     scoreList:[],
     //倒计时的时间
-    downTime: 180,
+    downTime: 30,
     //是否正在游戏
     isPlayer:false,
     //自己的头像地址

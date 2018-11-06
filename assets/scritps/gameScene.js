@@ -298,20 +298,33 @@ cc.Class({
 
     //胜利弹面板
     onVictory:function(){
-        console.log("初始化会调用吗");
+
         gameData.isPlayer = false
         this.victoryPanel.active = true;
         this.topbar.getComponent("TimeAndScore").onStopTime();
         this.onRemoveEvent();
+        this.onRecordScore();
     },
 
     //失败弹面板
     onFailure:function(){
-        console.log("初始化会调用吗lllll");
         gameData.isPlayer = false
         this.playAgin.active = true;
         this.topbar.getComponent("TimeAndScore").onStopTime();
         this.onRemoveEvent();
+        this.onRecordScore();
+    },
+
+    //记录积分
+    onRecordScore:function(){
+        wx.setUserCloudStorage({
+            KVDataList: [{key:"score", value:gameData.myScore+""}],
+            success:function(res){
+                
+            },
+            fail:function(){},
+            complete:function(){},
+        });
     },
 
     //点击再玩一次按钮
@@ -455,11 +468,12 @@ cc.Class({
     /**点击返回按钮回到主场景中**/
     onClickGoBackBtn:function(event,customData){
         //游戏结束标识的更新
+
+        this.onRecordScore();//保存积分
         gameData.comeOver = true;
         this.onTimeOut();
         //移除计时器
         this.topbar.getComponent("TimeAndScore").onStopTime();
-        console.log("点击返回");
         cc.director.loadScene("mainScene");
     },
 

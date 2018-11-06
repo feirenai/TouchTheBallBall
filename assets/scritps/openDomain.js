@@ -27,14 +27,21 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        nodeScript:{
+            default:null,
+            type: cc.Node,
+        },
+
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+     onLoad () {
+        this.subContextView = this.nodeScript.getComponent(cc.WXSubContextView);
+     },
 
     start () {
-        this.hideIsShow(false)
+        
     },
 
     //向开放数据域上传数据
@@ -43,11 +50,17 @@ cc.Class({
             type: type,
             value: value,
         });
+
+        if(this.subContextView){
+            //this.subContextView.update();
+        }
+
     },
 
     //是否隐藏组件
     hideIsShow(boo){
         this.node.acitve = boo;
+        this.subContextView.enabled = boo;
     },  
 
     //更新分数
